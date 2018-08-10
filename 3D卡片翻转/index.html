@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: rgb(209, 231, 248);
+    }
+    div {
+      width: 250px;
+      height: 350px;
+      border-radius: 6px;
+    }
+    .container div {
+      position: absolute;
+      transition: transform 2s;
+      backface-visibility: hidden;
+    }
+    .back {
+      background-image: url("反面.jpg");
+      /* background-color: rgb(92, 229, 253); */
+      transform: rotateY(180deg);
+    }
+    .font {
+      background-image: url("正面.jpg");
+      /* background-color: rgb(88, 76, 250); */
+    }
+    .container:hover .font {
+      transform: rotateY(180deg);
+    }
+    .container:hover .back {
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="back"></div>
+    <div class="font"></div>
+  </div>
+</body>
+</html>
