@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      height: 768px;
+      width: 1366px;
+      padding-top: 20px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .imgShow img {
+      position: absolute;
+      z-index: 0;
+    }
+    .thumbnail {
+      position: absolute;
+      bottom: 0;
+      left: 200px;
+      z-index: 2;
+    }
+    .thumbnail img {
+      width: 180px;
+      padding: 0 5px 0 5px;
+      filter: brightness(0.5);
+      transition: filter 0.3s ease;
+    }
+    .thumbnail img:hover {
+      cursor: pointer;
+      filter: brightness(1);
+    }
+    .imgShow img:target {
+      z-index: 1;
+    }
+    .imgShow img:not(:target) {
+      z-index: 0;
+    }
+    #img1:target {
+      animation: animation1 0.5s ease-out;
+    }
+    #img2:target {
+      animation: animation2 0.5s ease-out;
+    }
+    #img3:target {
+      animation: animation3 1s ease-in;
+    }
+    #img4:target {
+      animation: animation4 1s ease-out;
+    }
+    #img5:target {
+      animation: animation5 0.7s ease-in-out;
+    }
+    @keyframes animation1 {
+      0% {
+        transform: translateX(-500px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    @keyframes animation2 {
+      0% {
+        transform: translateY(-350px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes animation3 {
+      0% {
+        transform: scale(0.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes animation4 {
+      0% {
+        transform: scale(2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes animation5 {
+      0% {
+        transform: rotate(-360deg) scale(0.1);
+      }
+      100% {
+        transform: rotate(0) scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="imgShow">
+      <img id="img1" src="./imgs/1.PNG" alt="1">
+      <img id="img2" src="./imgs/2.PNG" alt="2">
+      <img id="img3" src="./imgs/3.PNG" alt="3">
+      <img id="img4" src="./imgs/4.PNG" alt="4">
+      <img id="img5" src="./imgs/5.PNG" alt="5">
+    </div>
+    <div class="thumbnail">
+      <a href="#img1"><img class="img1" src="./imgs/1.png" alt="1"></a>
+      <a href="#img2"><img class="img2" src="./imgs/2.png" alt="2"></a>
+      <a href="#img3"><img class="img3" src="./imgs/3.png" alt="3"></a>
+      <a href="#img4"><img class="img4" src="./imgs/4.png" alt="4"></a>
+      <a href="#img5"><img class="img5" src="./imgs/5.png" alt="5"></a>
+    </div>
+  </div>
+</body>
+</html>
